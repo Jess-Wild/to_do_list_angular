@@ -1,16 +1,16 @@
 <div class="main">
-  <h1>My To Do List</h1>
-  <label for="addItemInput">What would you like to do today? </label>
+  <h1>Ma liste de choses à faire</h1>
+  <label for="addItemInput">Que voudrais tu faire aujourd'hui ? </label>
 
   <input
     #newItem
-    placeholder="add an item"
+    placeholder="ajouter une tâche"
     (keyup.enter)="addItem(newItem.value); newItem.value = ''"
     class="lg-text-input"
     id="addItemInput"
   />
 
-  <button class="btn-primary" (click)="addItem(newItem.value)">Add</button>
+  <button class="btn-primary" (click)="addItem(newItem.value)">Ajouter</button>
 
   <div class="btn-wrapper">
     <button
@@ -18,7 +18,7 @@
       [class.active]="filter == 'all'"
       (click)="filter = 'all'"
     >
-      All
+      Toutes les tâches
     </button>
 
     <button
@@ -26,7 +26,7 @@
       [class.active]="filter == 'active'"
       (click)="filter = 'active'"
     >
-      To Do
+      À faire
     </button>
 
     <button
@@ -34,14 +34,14 @@
       [class.active]="filter == 'done'"
       (click)="filter = 'done'"
     >
-      Done
+      Terminée(s)
     </button>
   </div>
 
   <h2>
     {{ items.length }}
-    <span *ngIf="items.length === 1; else elseBlock">item</span>
-    <ng-template #elseBlock>items</ng-template>
+    <span *ngIf="items.length === 1; else elseBlock">Objet</span>
+    <ng-template #elseBlock>Objets</ng-template>
   </h2>
 
   <ul>

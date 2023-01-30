@@ -12,10 +12,10 @@ export class AppComponent {
   filter: "all" | "active" | "done" = "all";
 
   allItems = [
-    {description: "eat", done: true },
-    {description: "sleep", done: false },
-    {description: "play", done: false },
-    {description: "laugh", done: false },
+    {description: "manger", done: true },
+    {description: "dormir", done: false },
+    {description: "jouer", done: false },
+    {description: "rire", done: false },
   ];
 
   get items() {
