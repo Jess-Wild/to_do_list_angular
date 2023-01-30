@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Item } from '../item';
 
 @Component({
   selector: 'app-item',
@@ -7,6 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
 
+  editable = false;
+
+  @Input() item!: Item;
+  @Input() newItem!: string;
+  @Output() remove = new EventEmitter<Item>();
+
+  saveItem(description: string) {
+    if (!description) return;
+    this.editable = false;
+    this.item.description = description;
+  }
   constructor() { }
 
   ngOnInit(): void {
