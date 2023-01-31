@@ -17,7 +17,7 @@ export class ItemComponent implements OnInit {
   saveItem(description: string) {
     if (!description) return;
     this.editable = false;
-    this.item.description = description;
+    this.item.title = description;
   }
   constructor() { }
 
